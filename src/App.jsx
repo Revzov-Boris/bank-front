@@ -53,7 +53,7 @@ function App() {
         </main>
 
         <footer className="footer">
-          © 2024 Банковские карты. Учебный проект
+          2026 Банковские карты. Клиент для https://github.com/Revzov-Boris/Bank-API
         </footer>
       </div>
     </Router>
