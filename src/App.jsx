@@ -53,7 +53,7 @@ function App() {
         </main>
 
         <footer className="footer">
-          2026 Банковские карты. Клиент для https://github.com/Revzov-Boris/Bank-API
+          Банковские карты. Клиент для <a href="https://github.com/Revzov-Boris/Bank-API">https://github.com/Revzov-Boris/Bank-API</a>
         </footer>
       </div>
     </Router>

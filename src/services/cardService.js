@@ -25,7 +25,7 @@ export const cardService = {
 
     createTransfer: async (transferData) => {
         try {
-            const data = await apiService.post('/api/transfers', transferData);
+            const data = await apiService.post(ENDPOINTS.TRANSFER, transferData);
             return data;
         } catch (error) {
             console.error('Error creating transfer:', error);

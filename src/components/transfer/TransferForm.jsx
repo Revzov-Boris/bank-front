@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 const TransferForm = ({ onSubmit, loading, error, success }) => {
   const [formData, setFormData] = useState({
-    fromCardId: '',
-    toCardId: '',
-    amount: '',
+    cardFromId: '',
+    cardToId: '',
+    money: '',
   });
 
   const [validationErrors, setValidationErrors] = useState({});
@@ -19,16 +19,16 @@ const TransferForm = ({ onSubmit, loading, error, success }) => {
 
   const validate = () => {
     const errors = {};
-    if (!formData.fromCardId) errors.fromCardId = 'Выберите карту отправителя';
-    if (!formData.toCardId) errors.toCardId = 'Выберите карту получателя';
-    if (formData.fromCardId === formData.toCardId) {
-      errors.toCardId = 'Карты должны быть разными';
+    if (!formData.cardFromId) errors.cardFromId = 'Выберите карту отправителя';
+    if (!formData.cardToId) errors.cardToId = 'Выберите карту получателя';
+    if (formData.cardFromId === formData.cardToId) {
+      errors.cardToId = 'Карты должны быть разными';
     }
-    if (!formData.amount || formData.amount <= 0) {
-      errors.amount = 'Введите сумму больше 0';
+    if (!formData.money || formData.money <= 0) {
+      errors.money = 'Введите сумму больше 0';
     }
-    if (formData.amount && isNaN(formData.amount)) {
-      errors.amount = 'Введите корректное число';
+    if (formData.money && isNaN(formData.money)) {
+      errors.money = 'Введите корректное число';
     }
     setValidationErrors(errors);
     return Object.keys(errors).length === 0;
@@ -38,9 +38,9 @@ const TransferForm = ({ onSubmit, loading, error, success }) => {
     e.preventDefault();
     if (validate()) {
       onSubmit({
-        fromCardId: parseInt(formData.fromCardId),
-        toCardId: parseInt(formData.toCardId),
-        amount: parseFloat(formData.amount),
+        cardFromId: parseInt(formData.cardFromId),
+        cardToId: parseInt(formData.cardToId),
+        money: parseFloat(formData.money),
       });
     }
   };
@@ -68,15 +68,15 @@ const TransferForm = ({ onSubmit, loading, error, success }) => {
           <label className="form-label">ID карты отправителя</label>
           <input
             type="number"
-            name="fromCardId"
-            className={`form-input ${validationErrors.fromCardId ? 'error' : ''}`}
-            value={formData.fromCardId}
+            name="cardFromId"
+            className={`form-input ${validationErrors.cardFromId ? 'error' : ''}`}
+            value={formData.cardFromId}
             onChange={handleChange}
             placeholder="Введите ID карты"
             disabled={loading}
           />
-          {validationErrors.fromCardId && (
-            <span className="form-error">{validationErrors.fromCardId}</span>
+          {validationErrors.cardFromId && (
+            <span className="form-error">{validationErrors.cardFromId}</span>
           )}
         </div>
 
@@ -84,15 +84,15 @@ const TransferForm = ({ onSubmit, loading, error, success }) => {
           <label className="form-label">ID карты получателя</label>
           <input
             type="number"
-            name="toCardId"
-            className={`form-input ${validationErrors.toCardId ? 'error' : ''}`}
-            value={formData.toCardId}
+            name="cardToId"
+            className={`form-input ${validationErrors.cardToId ? 'error' : ''}`}
+            value={formData.cardToId}
             onChange={handleChange}
             placeholder="Введите ID карты"
             disabled={loading}
           />
-          {validationErrors.toCardId && (
-            <span className="form-error">{validationErrors.toCardId}</span>
+          {validationErrors.cardToId && (
+            <span className="form-error">{validationErrors.cardToId}</span>
           )}
         </div>
 
@@ -100,17 +100,17 @@ const TransferForm = ({ onSubmit, loading, error, success }) => {
           <label className="form-label">Сумма перевода (₽)</label>
           <input
             type="number"
-            name="amount"
-            className={`form-input ${validationErrors.amount ? 'error' : ''}`}
-            value={formData.amount}
+            name="money"
+            className={`form-input ${validationErrors.money ? 'error' : ''}`}
+            value={formData.money}
             onChange={handleChange}
             placeholder="Введите сумму"
             step="0.01"
             min="0.01"
             disabled={loading}
           />
-          {validationErrors.amount && (
-            <span className="form-error">{validationErrors.amount}</span>
+          {validationErrors.money && (
+            <span className="form-error">{validationErrors.money}</span>
           )}
         </div>
 
