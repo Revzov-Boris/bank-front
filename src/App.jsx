@@ -16,7 +16,7 @@ function App() {
       <div className={`app-shell theme-${theme}`}>
         <header className="header">
           <div>
-            <h1 className="header-label">🏦 Банк-Клиент</h1>
+            <h1 className="header-label">🏛️ Банк</h1>
           </div>
           <nav className="nav">
             <NavLink 

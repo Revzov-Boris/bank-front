@@ -32,7 +32,7 @@ const TransferPage = () => {
   return (
     <div className="page-grid" style={{ maxWidth: '600px' }}>
       <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-        Перевод между картами
+        💸Перевод между картами
       </h1>
       <TransferForm 
         onSubmit={handleTransfer}

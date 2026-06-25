@@ -68,7 +68,7 @@ const HomePage = () => {
   return (
     <div className="page-grid">
       <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-        Мой профиль
+        👤Мой профиль
       </h1>
       
       {user && <UserProfile user={user} />}
