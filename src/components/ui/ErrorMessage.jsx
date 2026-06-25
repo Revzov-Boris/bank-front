@@ -7,8 +7,7 @@ const ErrorMessage = ({ message, onRetry }) => {
       <p>{message}</p>
       {onRetry && (
         <button 
-          className="btn-primary" 
-          style={{ marginTop: '0.5rem' }}
+          className="btn-primary"
           onClick={onRetry}
         >
           Попробовать снова

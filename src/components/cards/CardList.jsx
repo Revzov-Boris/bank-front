@@ -8,7 +8,7 @@ const CardList = ({ cards, loading, error, onRetry }) => {
   if (error) return <ErrorMessage message={error} onRetry={onRetry} />;
   if (!cards || cards.length === 0) {
     return (
-      <div className="text-center" style={{ padding: '2rem', color: '#64748b' }}>
+      <div>
         У вас нет активных карт
       </div>
     );

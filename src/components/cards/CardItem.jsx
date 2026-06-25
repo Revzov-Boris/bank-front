@@ -24,8 +24,8 @@ const CardItem = ({ card }) => {
     <div className="card-item">
       <div className="card-header">
         <div>
-          <div className="card-bank">{card.bankTitle || 'Банк'}</div>
-          <div className="card-number">**** {card.lastFourDigits || '****'}</div>
+          <div className="card-bank">{card.bankTitle}</div>
+          <div className="card-number">{card.lastFourDigits}</div>
         </div>
         <span className={`card-status ${getStatusClass(card.status)}`}>
           {card.status || 'Неизвестно'}
@@ -34,7 +34,7 @@ const CardItem = ({ card }) => {
       <div className="card-details">
         <div className="card-detail-row">
           <span className="card-detail-label">ID карты</span>
-          <span style={{ fontWeight: '500', color: '#3b82f6' }}>#{card.id}</span>
+          <span className="card-id">{card.id}</span>
         </div>
         <div className="card-detail-row">
           <span className="card-detail-label">Тип карты</span>
@@ -45,7 +45,7 @@ const CardItem = ({ card }) => {
           <span>{formatDate(card.expiryDate)}</span>
         </div>
         <div className="card-balance">
-          {formatBalance(card.balance)} ₽
+          {formatBalance(card.balance)}
         </div>
       </div>
     </div>
