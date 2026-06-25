@@ -5,7 +5,7 @@ import { cardService } from '../services/cardService';
 const TransferPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(null);
 
   const handleTransfer = async (transferData) => {
     setLoading(true);
@@ -13,8 +13,9 @@ const TransferPage = () => {
     setSuccess(false);
 
     try {
-      await cardService.createTransfer(transferData);
-      setSuccess(true);
+      // ответ сервера о создании перевода
+      const transferInfo = await cardService.createTransfer(transferData);
+      setSuccess(transferInfo);
     } catch (err) {
       console.log("ОШИБКА: " + err)
       console.log("ОШИБКА: " + typeof(err))

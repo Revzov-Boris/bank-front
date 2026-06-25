@@ -59,7 +59,10 @@ const TransferForm = ({ onSubmit, loading, error, success }) => {
       {success && (
         <div className="notification notification-success">
           <strong>Успешно!</strong>
-          <p>Перевод выполнен успешно</p>
+          <p>ID перевода: {success.id}</p>
+          <p>ID карты-отправителя: {success.cardFromId}</p>
+          <p>ID карты-получателя: {success.cardToId}</p>
+          <p>Сумма перевода: {success.money}</p>
         </div>
       )}
 
