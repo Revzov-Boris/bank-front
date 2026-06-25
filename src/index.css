@@ -194,6 +194,8 @@ body {
 .notification-error { background: #fee2e2; border: 1px solid #ef4444; color: #991b1b; }
 .theme-dark .notification-error { background: #7f1d1d; border-color: #dc2626; color: #fca5a5; }
 
+
+/* кнопки пагинации и информация */
 .pagination {
   display: flex;
   justify-content: center;
@@ -208,15 +210,30 @@ body {
   color: #0f172a;
   cursor: pointer;
 }
-
-.theme-dark .pagination-button { background: #1e293b; border-color: #334155; color: #e2e8f0; }
-.pagination-button:hover:not(:disabled) { background: #e2e8f0; }
-.theme-dark .pagination-button:hover:not(:disabled) { background: #334155; }
-.pagination-button:disabled { opacity: 0.5; cursor: not-allowed; }
+.theme-dark .pagination-button {
+   background: #1e293b; 
+   border-color: #334155; 
+   color: #e2e8f0; 
+}
+.pagination-button:hover:not(:disabled) { 
+  background: #e2e8f0; 
+}
+.theme-dark .pagination-button:hover:not(:disabled) { 
+  background: #334155;
+}
+.pagination-button:disabled { 
+  opacity: 0.5; 
+  cursor: 
+  not-allowed;
+}
 .pagination-info { padding: 0.5rem 1rem; display: flex; align-items: center; color: #64748b; }
 .theme-dark .pagination-info { color: #94a3b8; }
 
-.loader { display: flex; justify-content: center; padding: 2rem; }
+.loader { 
+  display: flex; 
+  justify-content: center; 
+  padding: 2rem; 
+}
 .spinner {
   width: 40px;
   height: 40px;

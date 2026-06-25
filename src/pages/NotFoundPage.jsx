@@ -7,9 +7,9 @@ const NotFoundPage = () => {
       <h1>404</h1>
       <h2>Страница не найдена</h2>
       <p>Извините, запрашиваемая страница не существует.</p>
-      <Link to="/" className="btn-primary" style={{ textDecoration: 'none' }}>
+      <a href="/" className="btn-primary">
         Вернуться на главную
-      </Link>
+      </a>
     </div>
   );
 };

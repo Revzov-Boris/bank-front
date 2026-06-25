@@ -13,7 +13,7 @@ class ApiService {
         };
     }
 
-    async get(endpoint, params = null) {
+    async get(endpoint, params) {
         const url = new URL(`${this.baseURL}${endpoint}`);
         if (params) {
             Object.keys(params).forEach(key => {

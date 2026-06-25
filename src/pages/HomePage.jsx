@@ -10,7 +10,7 @@ const HomePage = () => {
   const [error, setError] = useState(null);
   const [pagination, setPagination] = useState({
     page: 0,
-    size: 10,
+    size: 6,
     total: 0,
     totalPages: 0,
   });
