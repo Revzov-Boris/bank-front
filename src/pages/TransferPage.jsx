@@ -16,7 +16,12 @@ const TransferPage = () => {
       await cardService.createTransfer(transferData);
       setSuccess(true);
     } catch (err) {
-      setError(err.message || 'Произошла ошибка при выполнении перевода');
+      console.log("ОШИБКА: " + err)
+      console.log("ОШИБКА: " + typeof(err))
+      console.log("ОШИБКА: " + err.message)
+      let errorData = JSON.parse(err.message);
+      let errorMessage = errorData.message || "Произошла ошибка при выполнении перевода"
+      setError(errorMessage);
       console.error('Transfer error:', err);
     } finally {
       setLoading(false);
