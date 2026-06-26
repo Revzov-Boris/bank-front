@@ -21,6 +21,12 @@ const TransferForm = ({ onSubmit, loading, error, success }) => {
     const errors = {};
     if (!formData.cardFromId) errors.cardFromId = 'Выберите карту отправителя';
     if (!formData.cardToId) errors.cardToId = 'Выберите карту получателя';
+    if (!/^\d+$/.test(formData.cardFromId.toString())) {
+      errors.cardFromId = "Введите целое число";
+    }
+    if (!/^\d+$/.test(formData.cardToId.toString())) {
+      errors.cardToId = "Введите целое число";
+    }
     if (formData.cardFromId === formData.cardToId) {
       errors.cardToId = 'Карты должны быть разными';
     }

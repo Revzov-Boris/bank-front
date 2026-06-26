@@ -229,6 +229,8 @@ body {
 .pagination-info { padding: 0.5rem 1rem; display: flex; align-items: center; color: #64748b; }
 .theme-dark .pagination-info { color: #94a3b8; }
 
+
+/* круг загрузки */
 .loader { 
   display: flex; 
   justify-content: center; 

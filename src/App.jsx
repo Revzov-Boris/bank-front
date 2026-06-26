@@ -39,7 +39,7 @@ function App() {
               className="theme-button" 
               onClick={toggleTheme}
             >
-              {theme === 'light' ? '🌙' : '☀️'}
+              {theme === 'light' ? '☀️' : '🌙'}
             </button>
           </nav>
         </header>
